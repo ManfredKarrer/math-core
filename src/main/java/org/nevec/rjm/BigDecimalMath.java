@@ -786,7 +786,23 @@ public class BigDecimalMath
                         MathContext mcR = new MathContext( err2prec(1.0,errR) ) ;
                         return resul.round(mcR) ;
                 }
-        } /* BigDecimalMath.pow */
+        }
+
+        /** Power function with base 2.
+         * @param y Exponent of the power.
+         * @return x^y.
+         * @since 2009-06-01
+         * @author Richard J. Mathar
+         */
+        static public BigDecimal powOf2(final BigDecimal y)
+        {
+                BigDecimal x = BigDecimal.valueOf(2);
+                /* return x^y = exp(y*log(2)) ;
+                 */
+                BigDecimal logx = log(x) ;
+                BigDecimal ylogx = y.multiply(logx) ;
+                return exp(ylogx) ;
+        }
 
         /** Raise to an integer power and round.
         * @param x The base.
