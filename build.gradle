@@ -2,6 +2,7 @@ group 'org.nevec.rjm'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'jar'
 
 jar {
     baseName = 'math-core'
